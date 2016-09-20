@@ -4,8 +4,9 @@ package assignment1;
  *
  * @author Root
  */
-public class FoodTruck extends FoodTruckOwner {
+public class FoodTruck {
     
+    private FoodTruckOwner owner;
     private int truckID;
     private String truckName;
     private String location;
@@ -14,24 +15,26 @@ public class FoodTruck extends FoodTruckOwner {
     
     private static int nextTruckNum = 0;
     
-    public FoodTruck ()
+    public FoodTruck (FoodTruckOwner owner, String name, String type)
     {
         this.truckID = nextTruckNum++;
-        this.truckName = "unknown";
-        this.location = "unknown";
-        this.foodType = "unknown";
-        this.status = "unknown";
-    }
-    
-    public FoodTruck (String name, String type)
-    {
-        this.truckID = nextTruckNum++;
+        this.owner = owner;
         this.truckName = name;
         this.location = "unknown";
         this.foodType = type;
         this.status = "unknown";
     }
-
+ 
+    public FoodTruckOwner getOwner ()
+    {
+        return this.owner;
+    }
+    
+    public void setOwner (FoodTruckOwner fto)
+    {
+        this.owner = fto;
+    }
+    
     public int getTruckID() {
         return truckID;
     }

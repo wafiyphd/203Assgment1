@@ -151,29 +151,24 @@ public class FTTConsole {
         System.out.println("\nLogging in.");
         System.out.println("\nPlease enter your username: ");
         String find = kbd.nextLine();
-        if (ftt.findUser(find).getClassName().equals("Customer"))
-        {    
-            custLogin = (Customer) ftt.findUser(find);
-            while (custLogin == null)
+        User ft = ftt.findUser(find);
+        while (ft == null)
             {
                 System.out.println("Invalid username");
                 System.out.println("\nPlease enter your username: ");
                 find = kbd.nextLine();
-                custLogin = (Customer) ftt.findUser(find);
+                ft = ftt.findUser(find);
             }
+        
+        if (ft.getClassName().equals("Customer"))
+        {    
+            custLogin = (Customer) ft;
             loginCustomer();
         }
         
         else
         {
-            ownerLogin = (FoodTruckOwner) ftt.findUser(find);
-            while (ownerLogin == null)
-            {
-                System.out.println("Invalid username");
-                System.out.println("\nPlease enter your username: ");
-                find = kbd.nextLine();
-                ownerLogin = (FoodTruckOwner) ftt.findUser(find);
-            }
+            ownerLogin = (FoodTruckOwner) ft;
             loginOwner();
         }
     }
@@ -236,7 +231,7 @@ public class FTTConsole {
         System.out.println("\nSuccessfully logged in.");
         System.out.println("(Logged in as Food Truck Owner)");
         System.out.println("\nUser details: ");
-        System.out.println(ownerLogin.toString());
+        System.out.println(ownerLogin.toString() + ftt.getAllTrucksOwned(ownerLogin));
         
         System.out.println("\nWhat would you like to do: ");
         System.out.println("1. Modify user details");
@@ -389,16 +384,16 @@ public class FTTConsole {
         }
 
         System.out.println("\nUser details: ");
-        System.out.println(ownerLogin.toString());
+        System.out.println(ownerLogin.toString() + ftt.getAllTrucksOwned(ownerLogin));
     }
     
     public static void manageTrucks ()
     {
         System.out.println("\nManaging Trucks.");
         System.out.println("\nUser details: ");
-        System.out.println(ownerLogin.allTrucksOwned());
+        System.out.println(ftt.getAllTrucksOwned(ownerLogin));
         
-        System.out.println("What would you like to do?");
+        System.out.println("\nWhat would you like to do?");
         System.out.println("1. Add a truck");
         System.out.println("2. Modify truck details");
         System.out.println("3. Exit managing truck");
@@ -422,12 +417,14 @@ public class FTTConsole {
                     addTruck(); 
                     break;
                 case 2:
-                    if (ownerLogin.getTrucksNum() == 0)
-                        System.out.println("No trucks owned yet, please add a Truck.");
+                    if (ftt.getTrucksOwnedNum(ownerLogin) == 0)
+                        System.out.println("\nNo trucks owned yet, please add a Truck.");
                     else
                         modifyTruck();
                     break;
             }
+            
+            System.out.println(ftt.getAllTrucksOwned(ownerLogin));
             
             System.out.println("\nWhat would you like to do?");
             System.out.println("1. Add a truck");
@@ -454,7 +451,7 @@ public class FTTConsole {
         String name = kbd.nextLine();
         System.out.println("Please enter the food type served by the food truck: ");
         String foodtype = kbd.nextLine();
-        FoodTruck ft = ftt.addFoodTruck(name, foodtype);
+        FoodTruck ft = ftt.addFoodTruck(ownerLogin, name, foodtype);
         if (ft != null)
         {
             System.out.println("\nSuccessfully added new truck!");
@@ -462,17 +459,12 @@ public class FTTConsole {
         }
         else
             System.out.println("\nFailed, truck not added");
-        
-        System.out.println("\nManaging Trucks.");
-        System.out.println("\nUser details: ");
-        System.out.println(ownerLogin.allTrucksOwned());
-        
     }
     
     public static void modifyTruck ()
     {
         System.out.println("\nModifying trucks");
-        System.out.println(ownerLogin.allTrucksOwned());
+        System.out.println(ftt.getAllTrucksOwned(ownerLogin));
         System.out.println("Which truck would you like to modify?");
         System.out.println("Enter ID of truck: ");        
         int ID = kbd.nextInt();
@@ -482,6 +474,15 @@ public class FTTConsole {
         while (ft == null)
         {
             System.out.println("\nTruck with that ID not found ");
+            System.out.println("Enter ID of truck: ");
+            ID = kbd.nextInt();
+            kbd.nextLine();
+            ft = ftt.findFoodTruck(ID);
+        }
+        
+        while (ftt.getTruckOwner(ID, ownerLogin) == false)
+        {
+            System.out.println("The truck with that ID is not yours.");
             System.out.println("Enter ID of truck: ");
             ID = kbd.nextInt();
             kbd.nextLine();
@@ -511,26 +512,33 @@ public class FTTConsole {
             switch (choice)
             {
                 case 1:
-                    System.out.println("Please enter new name of truck: ");
+                    System.out.println("\nPlease enter new name of truck: ");
                     String name = kbd.nextLine();
                     ft.setTruckName(name);
                     System.out.println("\nSuccessfully changed truck name to '" + name + "'.");
+                    break;
                 case 2:
-                    System.out.println("Please enter new food type of truck: ");
+                    System.out.println("\nPlease enter new food type of truck: ");
                     String foodtype = kbd.nextLine();
                     ft.setFoodType(foodtype);
                     System.out.println("\nSuccessfully changed truck food type to '" + foodtype + "'.");
+                    break;
                 case 3:
-                    System.out.println("Please enter new location of truck: ");
+                    System.out.println("\nPlease enter new location of truck: ");
                     String location = kbd.nextLine();
-                    ft.setTruckName(location);
+                    ft.setLocation(location);
                     System.out.println("\nSuccessfully changed truck location to '" + location + "'.");
+                    break;
                 case 4:
-                    System.out.println("Please enter new status of truck: ");
+                    System.out.println("\nPlease enter new status of truck: ");
                     String status = kbd.nextLine();
-                    ft.setTruckName(status);
+                    ft.setStatus(status);
                     System.out.println("\nSuccessfully changed truck status to '" + status + "'.");
+                    break;
             }
+            
+            System.out.println(ftt.getAllTrucksOwned(ownerLogin));
+            
             System.out.println("\nWhat would you like to modify?");
             System.out.println("1. Truck name");
             System.out.println("2. Truck food type");

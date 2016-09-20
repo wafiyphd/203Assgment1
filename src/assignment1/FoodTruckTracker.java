@@ -5,7 +5,7 @@ import java.util.*;
  *
  * @author Root
  */
-public class FoodTruckTracker extends FoodTruckOwner {
+public class FoodTruckTracker {
     
     private ArrayList<FoodTruck> FoodTrucks;
     private ArrayList<User> Users;
@@ -15,16 +15,12 @@ public class FoodTruckTracker extends FoodTruckOwner {
         FoodTrucks = new ArrayList<>();
         Users = new ArrayList<>();
     }
-
     
-    public FoodTruck addFoodTruck (String name, String type)
+    public FoodTruck addFoodTruck (FoodTruckOwner owner, String name, String type)
     {
-        FoodTruck ft = new FoodTruck(name, type);
+        FoodTruck ft = new FoodTruck(owner, name, type);
         if (FoodTrucks.add(ft))
-        {
-            super.addFT(name, type);
             return ft;
-        }
         else
             return null;
     }
@@ -65,6 +61,39 @@ public class FoodTruckTracker extends FoodTruckOwner {
                 return user;
         }
         return null;
+    }
+    
+    public int getTrucksOwnedNum (FoodTruckOwner fto)
+    {
+        int count = 0;
+        for (FoodTruck ft: FoodTrucks)
+        {
+            if (ft.getOwner() == fto)
+                count++;
+        }
+        return count;
+    }
+    public String getAllTrucksOwned (FoodTruckOwner fto)
+    {
+        String all = "\nAll food trucks owned: \n";
+        if (this.getTrucksOwnedNum(fto) == 0)
+            all += "No trucks owned";
+        else
+            for (FoodTruck ft: FoodTrucks)
+            {
+                if (ft.getOwner() == fto)
+                    all += ft.toString() + "\n";
+            }
+        return all;
+    }
+    
+    public boolean getTruckOwner (int id, FoodTruckOwner fto)
+    {
+        FoodTruck ft = findFoodTruck (id);
+        if (ft.getOwner() == fto)
+            return true;
+        else
+            return false;
     }
     
     public ArrayList<FoodTruck> getFoodTrucks() 
