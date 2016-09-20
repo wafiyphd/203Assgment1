@@ -59,6 +59,8 @@ public class FoodTruckTracker {
      * A method to add a new food truck owner to the array of users
      * @param user
      * @param pass
+     * @param name
+     * @param email
      * @param license
      * @return owner if successful, null if not
      */
