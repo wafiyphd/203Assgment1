@@ -349,7 +349,7 @@ public class FTTConsole {
                 System.out.println("Please enter new email address: ");
                 String newemail = kbd.nextLine();
                 custLogin.setEmail(newemail);
-                System.out.println("\nFull name successfully changed to '" + newemail + "'.");
+                System.out.println("\nEmail address successfully changed to '" + newemail + "'.");
                 break;
         }
         System.out.println("\nUser details: ");
@@ -406,7 +406,7 @@ public class FTTConsole {
                 System.out.println("Please enter new email address: ");
                 String newemail = kbd.nextLine();
                 ownerLogin.setEmail(newemail);
-                System.out.println("\nFull name successfully changed to '" + newemail + "'.");
+                System.out.println("\nEmail address successfully changed to '" + newemail + "'.");
                 break;
         }
 
