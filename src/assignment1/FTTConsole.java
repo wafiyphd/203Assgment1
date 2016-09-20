@@ -48,8 +48,8 @@ public class FTTConsole {
                         login();
                     break;
             }
-            
-            System.out.println("\nDo you want to sign up or log in?");
+            System.out.println("\nThere are " + ftt.getNumUsers() + " users signed up");
+            System.out.println("Do you want to sign up or log in?");
             System.out.println("1. Sign up");
             System.out.println("2. Log in");
             System.out.println("3. Exit");
@@ -67,6 +67,9 @@ public class FTTConsole {
         System.out.println("\nGoodbye, thank you for using Food Truck Tracker!");
     }
     
+    /**
+     * A method for the signing up process of the console
+     */
     public static void signUp ()
     {
         System.out.println("\nAre you:");
@@ -91,6 +94,9 @@ public class FTTConsole {
         }
     }
     
+    /**
+     * A method for signing up as a customer
+     */
     public static void addCustomer ()
     {
         System.out.println("\nSigning up as customer.");
@@ -119,6 +125,9 @@ public class FTTConsole {
             System.out.println("\nFailed, user not added.");
     }
     
+    /**
+     * A method for signing up as a Food Truck Owner
+     */
     public static void addOwner ()
     {
         System.out.println("\nSigning up as Food Truck Owner.");
@@ -146,6 +155,9 @@ public class FTTConsole {
             System.out.println("\nFailed, user not added.");
     }
 
+    /**
+     * A method for the logging in process of the console
+     */
     public static void login ()
     {
         System.out.println("\nLogging in.");
@@ -173,6 +185,9 @@ public class FTTConsole {
         }
     }
     
+    /**
+     * A method for logging in as a Customer
+     */
     public static void loginCustomer ()
     {
         System.out.println("\nPlease enter your password:");
@@ -217,6 +232,9 @@ public class FTTConsole {
         System.out.println("\nSuccessfully logged out.");
     }
     
+    /**
+     * A method for logging in as an owner
+     */
     public static void loginOwner ()
     {
         System.out.println("\nPlease enter your password:");
@@ -277,6 +295,9 @@ public class FTTConsole {
         
     }
     
+    /**
+     * A method for modifying details of a customer
+     */
     public static void modifyCustomer ()
     {
         System.out.println("\nWhat would you like to modify?");
@@ -332,6 +353,10 @@ public class FTTConsole {
         System.out.println(custLogin.toString());
     }
     
+    
+    /**
+     * A method for modifying details of a food truck owner
+     */
     public static void modifyOwner ()
     {
         System.out.println("\nWhat would you like to modify?");
@@ -387,6 +412,9 @@ public class FTTConsole {
         System.out.println(ownerLogin.toString() + ftt.getAllTrucksOwned(ownerLogin));
     }
     
+    /**
+     * A method to manage trucks for food truck owners
+     */
     public static void manageTrucks ()
     {
         System.out.println("\nManaging Trucks.");
@@ -444,6 +472,9 @@ public class FTTConsole {
         }
     }
     
+    /**
+     * A method for adding trucks for an owner
+     */
     public static void addTruck ()
     {
         System.out.println("\nAdding a new truck");
@@ -461,6 +492,9 @@ public class FTTConsole {
             System.out.println("\nFailed, truck not added");
     }
     
+    /**
+     * A method to modify truck details for an owner    
+     */
     public static void modifyTruck ()
     {
         System.out.println("\nModifying trucks");

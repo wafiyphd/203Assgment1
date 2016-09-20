@@ -11,6 +11,10 @@ public abstract class User {
     private String fullName;
     private String email;
     
+    
+    /**
+     * A super constructor for subclasses, Customer & FoodTruckOwners with no parameters
+     */
     public User ()
     {
         this.username = "unknown";
@@ -19,6 +23,13 @@ public abstract class User {
         this.email = "unknown";
     }
 
+    /**
+     * A super constructor for subclasses, Customer & FoodTrucksOwners with parameters
+     * @param inUser
+     * @param inPass
+     * @param inName
+     * @param inEmail 
+     */
     public User (String inUser, String inPass, String inName, String inEmail)
     {
         this.username = inUser;
@@ -27,40 +38,80 @@ public abstract class User {
         this.email = inEmail;
     }
 
+    /**
+     * A method to get username of User
+     * @return username
+     */
     public String getUsername() {
         return username;
     }
 
+    /**
+     * A method to set username of user
+     * @param username 
+     */
     public void setUsername(String username) {
         this.username = username;
     }
 
+    /**
+     * A method to get the password of User
+     * @return password 
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     * A method to set password of user
+     * @param password 
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
+    /**
+     * A method to get the full name of user
+     * @return fullName
+     */
     public String getFullName() {
         return fullName;
     }
 
+    /**
+     * A method to set the full name of user
+     * @param fullName 
+     */
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
 
+    /**
+     * A method to get the email of user
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * A method to set the email of user
+     * @param email 
+     */
     public void setEmail(String email) {
         this.email = email;
     }
     
+    /**
+     * A method to get the Class name of User whether Customer or FoodTruckOwner
+     * @return class name of User, Customer / FoodTruckOwner
+     */
     public abstract String getClassName();    
 
+    /**
+     * An abstract toString method 
+     * @return information about User, whether Customer / FoodTruckOwner
+     */
     @Override
     public abstract String toString();    
     
