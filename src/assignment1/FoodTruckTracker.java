@@ -2,8 +2,11 @@ package assignment1;
 import java.util.*;
 
 /**
- *
- * @author Root
+ * A container class containing two array lists for Users
+ * and food trucks.
+ * Also contains methods for the Food Truck Tracker console
+ * to use, such as the adding of Food Trucks, Customer, etc.
+ * @author Wafiy Damit
  */
 public class FoodTruckTracker {
     
@@ -59,9 +62,9 @@ public class FoodTruckTracker {
      * @param license
      * @return owner if successful, null if not
      */
-    public FoodTruckOwner addFoodTruckOwner (String user, String pass, int license)
+    public FoodTruckOwner addFoodTruckOwner (String user, String pass, String name, String email, int license)
     {
-        FoodTruckOwner owner = new FoodTruckOwner(user, pass, license);
+        FoodTruckOwner owner = new FoodTruckOwner(user, pass, name, email, license);
         if (Users.add(owner))
             return owner;
         else

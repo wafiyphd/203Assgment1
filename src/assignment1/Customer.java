@@ -1,8 +1,8 @@
 package assignment1;
 
 /**
- *
- * @author Root
+ * A Customer class for containing information about a customer
+ * @author Wafiy Damit
  */
 public class Customer extends User {
     

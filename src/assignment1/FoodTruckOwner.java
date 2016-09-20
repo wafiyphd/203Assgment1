@@ -1,8 +1,8 @@
 package assignment1;
-import java.util.*;
+
 /**
- *
- * @author Root
+ * A FoodTruckOwner class for containing information about a Food Truck Owner
+ * @author Wafiy Damit
  */
 public class FoodTruckOwner extends User {
     
@@ -23,9 +23,9 @@ public class FoodTruckOwner extends User {
      * @param pass
      * @param license 
      */
-    public FoodTruckOwner (String user, String pass, int license)
+    public FoodTruckOwner (String user, String pass, String name, String email, int license)
     {
-        super(user, pass, "unknown", "unknown");
+        super(user, pass, name, email);
         this.licenseNo = license;
     }
 

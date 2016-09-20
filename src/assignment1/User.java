@@ -1,8 +1,8 @@
 package assignment1;
 
 /**
- *
- * @author Root
+ * An abstract user class with subclasses Customer and FoodTruckOwner
+ * @author Wafiy Damit 
  */
 public abstract class User {
     

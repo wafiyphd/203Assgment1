@@ -1,8 +1,8 @@
 package assignment1;
 
 /**
- *
- * @author Root
+ * A FoodTruck class containing information about a FoodTruck 
+ * @author Wafiy Damit
  */
 public class FoodTruck {
     

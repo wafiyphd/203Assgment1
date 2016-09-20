@@ -1,8 +1,10 @@
 package assignment1;
 import java.util.*;
 /**
- *
- * @author Root
+ * A main class for the console of the food truck tracker
+ * where user can interact with the console and sign up, login
+ * modify details, add or change trucks, etc.
+ * @author Wafiy Damit
  */
 public class FTTConsole {
     
@@ -147,8 +149,12 @@ public class FTTConsole {
         System.out.println("Please enter license number: ");
         int license = kbd.nextInt();
         kbd.nextLine();
+        System.out.println("Please enter full name: ");
+        String name = kbd.nextLine();
+        System.out.println("Please enter email address: ");
+        String email = kbd.nextLine();
         
-        FoodTruckOwner fto = ftt.addFoodTruckOwner(user, pass, license);
+        FoodTruckOwner fto = ftt.addFoodTruckOwner(user, pass, name, email, license);
         if (fto != null)
             System.out.println("\nUser successfully added.");
         else
@@ -290,9 +296,7 @@ public class FTTConsole {
             choice = kbd.nextInt();
             kbd.nextLine();
         }
-        
         System.out.println("\nSuccessfully logged out.");
-        
     }
     
     /**
@@ -348,11 +352,9 @@ public class FTTConsole {
                 System.out.println("\nFull name successfully changed to '" + newemail + "'.");
                 break;
         }
-
         System.out.println("\nUser details: ");
         System.out.println(custLogin.toString());
     }
-    
     
     /**
      * A method for modifying details of a food truck owner
@@ -592,6 +594,4 @@ public class FTTConsole {
             } 
         }
     }
-    
-    
 }
