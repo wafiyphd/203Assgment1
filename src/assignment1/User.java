@@ -13,7 +13,7 @@ public abstract class User {
     
     
     /**
-     * A super constructor for subclasses, Customer & FoodTruckOwners with no parameters
+     * A super constructor for subclasses, Customer and FoodTruckOwners with no parameters
      */
     public User ()
     {
@@ -24,7 +24,7 @@ public abstract class User {
     }
 
     /**
-     * A super constructor for subclasses, Customer & FoodTrucksOwners with parameters
+     * A super constructor for subclasses, Customer and FoodTrucksOwners with parameters
      * @param inUser the username of the user
      * @param inPass the password for logging in
      * @param inName the full name of the user

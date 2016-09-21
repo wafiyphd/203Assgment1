@@ -15,7 +15,7 @@ public class FTTConsole {
     
     /**
      * The main console of the whole Food Truck Tracker system
-     * @param args
+     * @param args main
      */
     public static void main (String[] args)
     {
