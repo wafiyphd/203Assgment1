@@ -16,10 +16,10 @@ public class Customer extends User {
 
     /**
      * A constructor for a new Customer with parameters
-     * @param user
-     * @param pass
-     * @param name
-     * @param email 
+     * @param user the username of the customer
+     * @param pass the password for logging in
+     * @param name the full name of the customer
+     * @param email the email address of the customer
      */
     public Customer (String user, String pass, String name, String email)
     {

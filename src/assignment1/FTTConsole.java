@@ -13,6 +13,10 @@ public class FTTConsole {
     static Customer custLogin;
     static FoodTruckOwner ownerLogin;
     
+    /**
+     * The main console of the whole Food Truck Tracker system
+     * @param args
+     */
     public static void main (String[] args)
     {
         ftt = new FoodTruckTracker();

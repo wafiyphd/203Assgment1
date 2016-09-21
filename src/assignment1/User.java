@@ -25,10 +25,10 @@ public abstract class User {
 
     /**
      * A super constructor for subclasses, Customer & FoodTrucksOwners with parameters
-     * @param inUser
-     * @param inPass
-     * @param inName
-     * @param inEmail 
+     * @param inUser the username of the user
+     * @param inPass the password for logging in
+     * @param inName the full name of the user
+     * @param inEmail the email of the user
      */
     public User (String inUser, String inPass, String inName, String inEmail)
     {
@@ -48,7 +48,7 @@ public abstract class User {
 
     /**
      * A method to set username of user
-     * @param username 
+     * @param username the username of the user
      */
     public void setUsername(String username) {
         this.username = username;
@@ -64,7 +64,7 @@ public abstract class User {
 
     /**
      * A method to set password of user
-     * @param password 
+     * @param password the password for logging in
      */
     public void setPassword(String password) {
         this.password = password;
@@ -80,7 +80,7 @@ public abstract class User {
 
     /**
      * A method to set the full name of user
-     * @param fullName 
+     * @param fullName the full name of the user
      */
     public void setFullName(String fullName) {
         this.fullName = fullName;
@@ -96,7 +96,7 @@ public abstract class User {
 
     /**
      * A method to set the email of user
-     * @param email 
+     * @param email the amil of the user
      */
     public void setEmail(String email) {
         this.email = email;

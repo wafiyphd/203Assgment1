@@ -17,9 +17,9 @@ public class FoodTruck {
     
     /**
      * A constructor for a new Food Truck with parameters
-     * @param owner
-     * @param name
-     * @param type 
+     * @param owner the owner of this truck
+     * @param name the name of this truck
+     * @param type the food type served by this truck
      */
     public FoodTruck (FoodTruckOwner owner, String name, String type)
     {
@@ -42,7 +42,7 @@ public class FoodTruck {
     
     /**
      * A method to set the owner of this food truck to an existing food truck owner
-     * @param fto 
+     * @param fto the owner of this food truck
      */
     public void setOwner (FoodTruckOwner fto)
     {
@@ -68,7 +68,7 @@ public class FoodTruck {
 
     /**
      * A method to set the name of the food truck
-     * @param truckName 
+     * @param truckName setting the name of this food truck
      */
     public void setTruckName(String truckName) {
         this.truckName = truckName;
@@ -84,7 +84,7 @@ public class FoodTruck {
 
     /**
      * A method to set the location of the food truck
-     * @param location 
+     * @param location setting the location of this food truck
      */
     public void setLocation(String location) {
         this.location = location;
@@ -100,7 +100,7 @@ public class FoodTruck {
 
     /**
      * A method to set the food type served by the food truck
-     * @param foodType 
+     * @param foodType setting the food type of this food truck
      */
     public void setFoodType(String foodType) {
         this.foodType = foodType;
@@ -116,7 +116,7 @@ public class FoodTruck {
 
     /**
      * A method to set the status of the food truck
-     * @param status 
+     * @param status setting the status of this food truck
      */
     public void setStatus(String status) {
         this.status = status;

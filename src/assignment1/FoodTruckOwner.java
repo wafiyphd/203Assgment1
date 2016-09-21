@@ -19,9 +19,11 @@ public class FoodTruckOwner extends User {
     
     /**
      * A constructor for a new FoodTruckOwner with parameters
-     * @param user
-     * @param pass
-     * @param license 
+     * @param user the username of the owner
+     * @param pass the password for logging in
+     * @param name the full name of the owner
+     * @param license the license no of the owner, in integer only
+     * @param email the email address of the owner
      */
     public FoodTruckOwner (String user, String pass, String name, String email, int license)
     {
@@ -39,7 +41,7 @@ public class FoodTruckOwner extends User {
 
     /**
      * A method to set the license number of a FoodTruckOwner
-     * @param licenseNo 
+     * @param licenseNo the license no of the owner, in integer only
      */
     public void setLicenseNo(int licenseNo)
     {

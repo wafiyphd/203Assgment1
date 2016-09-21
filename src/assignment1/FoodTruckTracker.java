@@ -24,9 +24,9 @@ public class FoodTruckTracker {
     
     /**
      * A method to add a new food truck to the array of food trucks
-     * @param owner
-     * @param name
-     * @param type
+     * @param owner the owner of the truck
+     * @param name the name for the truck
+     * @param type the food type served by the truck
      * @return ft, if successful, null if not
      */
     public FoodTruck addFoodTruck (FoodTruckOwner owner, String name, String type)
@@ -40,10 +40,10 @@ public class FoodTruckTracker {
     
     /**
      * A method to add a new customer to the array of users
-     * @param user
-     * @param pass
-     * @param name
-     * @param email
+     * @param user the username of the Customer signing up
+     * @param pass the password for logging in of the Customer
+     * @param name the full name of the customer
+     * @param email the email address of the customer
      * @return customer if successful, null if not
      */
     public Customer addCustomer (String user, String pass, String name, String email)
@@ -57,11 +57,11 @@ public class FoodTruckTracker {
     
     /**
      * A method to add a new food truck owner to the array of users
-     * @param user
-     * @param pass
-     * @param name
-     * @param email
-     * @param license
+     * @param user the username of the Owner signing up
+     * @param pass the password for logging in of the Owner
+     * @param name the full name of the Owner
+     * @param email the email address of the owner
+     * @param license the license no of the owner, in integer only
      * @return owner if successful, null if not
      */
     public FoodTruckOwner addFoodTruckOwner (String user, String pass, String name, String email, int license)
@@ -75,7 +75,7 @@ public class FoodTruckTracker {
     
     /**
      * A method to find a food truck by searching for its ID
-     * @param find
+     * @param find the ID number of the truck the user is looking for
      * @return the food truck if found, null if not
      */
     public FoodTruck findFoodTruck (int find)
@@ -90,7 +90,7 @@ public class FoodTruckTracker {
     
     /**
      * A method to find a user by its username
-     * @param username
+     * @param username the username of the ID the user is logging in as
      * @return the user if found, null if not
      */
     public User findUser (String username)
@@ -106,7 +106,8 @@ public class FoodTruckTracker {
     /**
      * A method to find the amount of trucks a particular food truck
      * owner owns
-     * @param fto
+     * @param fto the owner the console is trying to get the number
+     * of trucks owned of
      * @return the number of trucks owned by the owner
      */
     public int getTrucksOwnedNum (FoodTruckOwner fto)
@@ -123,7 +124,8 @@ public class FoodTruckTracker {
     /**
      * A method to list all the food trucks owned with its informations
      * by a particular food truck owner
-     * @param fto
+     * @param fto the owner the console is trying to get all 
+     * truck information of
      * @return string of information of all the food trucks
      */
     public String getAllTrucksOwned (FoodTruckOwner fto)
@@ -143,8 +145,9 @@ public class FoodTruckTracker {
     /**
      * A method to check whether a truck belongs to a particular
      * food truck owner (in the parameters) or not
-     * @param id
-     * @param fto
+     * @param id the id of the truck being checked
+     * @param fto the owner of the truck being checked on whether 
+     * the truck is his or not
      * @return true if it is the owner's, false if not
      */
     public boolean getTruckOwner (int id, FoodTruckOwner fto)
